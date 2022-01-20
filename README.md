@@ -1,1 +1,3 @@
-# docker-golang-challenge
+# Docker GoLang Challenge
+
+ediltonbsjunior/codeeducation:challenge
