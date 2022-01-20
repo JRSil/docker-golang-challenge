@@ -1,0 +1,16 @@
+FROM golang:1.17.6-alpine AS builder
+
+WORKDIR /go/src/api
+
+COPY . .
+
+RUN go get -d -v \
+  && go install -v \
+  && go build
+
+##
+
+FROM scratch
+COPY --from=builder /go/src/api /go/bin/
+EXPOSE 3000
+CMD [ "go/bin/golang" ]
